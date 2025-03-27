@@ -69,14 +69,14 @@ function AssistantPage() {
     <MobileContainer>
       {!activeChat && !activeSymptomsCheck ? (
         // Main Assistant Page
-        <div className="bg-white min-h-screen">
+        <div className="bg-white min-h-full flex flex-col">
           {/* Header */}
-          <div className="p-4 flex justify-between items-center">
+          <div className="px-4 py-3 flex justify-between items-center">
             <h1 className="text-xl font-bold text-gray-900">Assistant Page</h1>
           </div>
           
           {/* Assistant Intro */}
-          <div className="px-4 py-2 flex items-center space-x-4">
+          <div className="px-4 py-3 flex items-center space-x-4">
             <div className="w-16 h-16 rounded-full overflow-hidden bg-blue-100">
               <div className="w-full h-full flex items-center justify-center text-blue-500">
                 <img src="/robot.svg" className="h-10 w-10" alt="Robot assistant" />

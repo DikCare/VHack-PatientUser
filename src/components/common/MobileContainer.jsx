@@ -7,7 +7,10 @@ function MobileContainer({ children }) {
   const showNavBar = !authRoutes.includes(location.pathname);
 
   return (
-    <div className="mobile-container bg-gray-50 relative">
+    <div className="mobile-container bg-gray-50 h-full flex flex-col relative pb-[40px]">
+      {/* Safe area for status bar */}
+      <div className="h-[env(safe-area-inset-top)] min-h-[constant(safe-area-inset-top)] bg-gray-50"></div>
+
       {/* Status bar */}
       <div className="w-full bg-gray-50 py-2 px-4 flex justify-between items-center text-xs text-black border-b border-gray-100">
         <div>9:41</div>
@@ -21,13 +24,17 @@ function MobileContainer({ children }) {
         </div>
       </div>
 
-      {/* Scrollable content */}
-      <div className="mobile-content bg-gray-50 pb-16">
+      {/* Main content area with safe area padding */}
+      <div className="flex-1 overflow-y-auto">
         {children}
       </div>
 
-      {/* Bottom Navigation - Only show on protected routes */}
-      {showNavBar && <BottomNavBar />}
+      {/* Bottom Navigation with safe area padding */}
+      {showNavBar && (
+        <div className="pb-[env(safe-area-inset-bottom)] min-pb-[constant(safe-area-inset-bottom)]">
+          <BottomNavBar />
+        </div>
+      )}
     </div>
   );
 }

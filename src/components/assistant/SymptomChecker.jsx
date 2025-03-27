@@ -94,9 +94,9 @@ function SymptomChecker({ onBackClick }) {
   ];
 
   return (
-    <div className="bg-white min-h-screen flex flex-col">
+    <div className="bg-white min-h-full flex flex-col">
       {/* Symptom Checker Header */}
-      <div className="bg-white p-4 border-b border-gray-200 flex items-center">
+      <div className="bg-white px-4 py-3 border-b border-gray-200 flex items-center">
         <button onClick={onBackClick} className="mr-4">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -106,7 +106,7 @@ function SymptomChecker({ onBackClick }) {
       </div>
       
       {/* Symptom Checker Content */}
-      <div className="p-4 overflow-y-auto flex-1">
+      <div className="flex-1 p-4 overflow-y-auto">
         {!showResults ? (
           <>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">What are your symptoms?</h2>

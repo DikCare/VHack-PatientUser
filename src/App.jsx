@@ -14,7 +14,6 @@ import MarketplacePage from './pages/MarketplacePage';
 import OrdersPage from './pages/OrdersPage';
 import MentalHealthPage from './pages/MentalHealthPage';
 import EditProfilePage from './pages/EditProfilePage';
-import ProtectedRoute from './components/auth/ProtectedRoute';
 import './index.css';
 
 function App() {
@@ -27,97 +26,18 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
 
-          {/* Protected App Routes */}
-          <Route 
-            path="/home" 
-            element={
-              <ProtectedRoute>
-                <HomePage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/monitor" 
-            element={
-              <ProtectedRoute>
-                <MonitorPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/assistant" 
-            element={
-              <ProtectedRoute>
-                <AssistantPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/hospitals" 
-            element={
-              <ProtectedRoute>
-                <HospitalsPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/profile" 
-            element={
-              <ProtectedRoute>
-                <ProfilePage />
-              </ProtectedRoute>
-            } 
-          />
-          
-          {/* Profile Related Routes */}
-          <Route 
-            path="/medical-history" 
-            element={
-              <ProtectedRoute>
-                <MedicalHistoryPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/reminders-alerts" 
-            element={
-              <ProtectedRoute>
-                <RemindersAlertsPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/marketplace" 
-            element={
-              <ProtectedRoute>
-                <MarketplacePage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/orders" 
-            element={
-              <ProtectedRoute>
-                <OrdersPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/mental-health" 
-            element={
-              <ProtectedRoute>
-                <MentalHealthPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/edit-profile" 
-            element={
-              <ProtectedRoute>
-                <EditProfilePage />
-              </ProtectedRoute>
-            } 
-          />
+          {/* App Routes */}
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/monitor" element={<MonitorPage />} />
+          <Route path="/assistant" element={<AssistantPage />} />
+          <Route path="/hospitals" element={<HospitalsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/medical-history" element={<MedicalHistoryPage />} />
+          <Route path="/reminders-alerts" element={<RemindersAlertsPage />} />
+          <Route path="/marketplace" element={<MarketplacePage />} />
+          <Route path="/orders" element={<OrdersPage />} />
+          <Route path="/mental-health" element={<MentalHealthPage />} />
+          <Route path="/edit-profile" element={<EditProfilePage />} />
 
           {/* Fallback Route */}
           <Route path="*" element={<Navigate to="/" replace />} />
